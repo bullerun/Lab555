@@ -1,0 +1,30 @@
+<?xml version = "1.0"?>
+<LabWorks>
+	<LabWork>
+		<id>1</id>
+		<name>lab 5</name>
+		<coordinates>2.0, 3</coordinates>
+		<creationDate>2023-02-19</creationDate>
+		<minimalPoint>1</minimalPoint>
+		<difficulty>EASY</difficulty>
+		<discipline></discipline>
+	</LabWork>
+	<LabWork>
+		<id>2</id>
+		<name>lab 3</name>
+		<coordinates>1.0, 3</coordinates>
+		<creationDate>2023-02-20</creationDate>
+		<minimalPoint>60</minimalPoint>
+		<difficulty></difficulty>
+		<discipline></discipline>
+	</LabWork>
+	<LabWork>
+		<id>3</id>
+		<name>lab 3</name>
+		<coordinates>1.0, 3</coordinates>
+		<creationDate>2023-02-21</creationDate>
+		<minimalPoint>60</minimalPoint>
+		<difficulty>TERRIBLE</difficulty>
+		<discipline>Опд, 2</discipline>
+	</LabWork>
+</LabWorks>
