@@ -3,9 +3,8 @@ name
 1
 2
 4
-
-
 help
 qwe
 info
-execute_script C:\Users\nikitosek\IdeaProjects\Lab5\src\script1.txt
+save
+
