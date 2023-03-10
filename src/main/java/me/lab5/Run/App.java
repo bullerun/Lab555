@@ -35,6 +35,7 @@ public class App {
                 new SaveCommand(fileHanding, collectionManager)
         );
         console.setCommandManager(commandManager);
+        fileHanding.setCommandManager(commandManager);
         fileHanding.setFileType(FileHanding.FileType.XML_FILE);
         runMode.setMode(RunModeEnum.FILE_MODE);//установка режима работы
         runMode.operatingModeSetting(); // нужно понять когда устанавливать

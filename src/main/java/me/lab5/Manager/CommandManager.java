@@ -3,11 +3,13 @@ package me.lab5.Manager;
 import me.lab5.Command.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CommandManager {
     private final int numberOfRecentCommands = 9;
-    private List<Command> commands = new ArrayList<>();
+    private List<Command> commandsForHelpCommand = new ArrayList<>();
     private String[] lastCommands = new String[numberOfRecentCommands];
     private final Command helpCommand;
     private final Command infoCommand;
@@ -23,6 +25,7 @@ public class CommandManager {
     private final Command executeScriptCommand;
     private final Command printFieldDescendingDiscipline;
     private final Command removeGreater;
+    Map<String, Command> commands = new HashMap<>();
     private RemoveLowerCommand removeLowerCommand;
     private SaveCommand saveCommand;
 
@@ -31,7 +34,7 @@ public class CommandManager {
                           Command sumOfMinimalPoint, Command averageOfMinimalPoint, Command clearCommand, Command exitCommand,
                           Command executeScriptCommand,
                           PrintFieldDescendingDisciplineCommand printFieldDescendingDisciplineCommand,
-                          RemoveGreaterCommand removeGreaterCommand, RemoveLowerCommand removeLowerCommand, SaveCommand saveCommand){
+                          RemoveGreaterCommand removeGreaterCommand, RemoveLowerCommand removeLowerCommand, SaveCommand saveCommand) {
         this.helpCommand = helpCommand;
         this.infoCommand = infoCommand;
         this.historyCommand = historyCommand;
@@ -49,39 +52,65 @@ public class CommandManager {
         this.removeLowerCommand = removeLowerCommand;
         this.saveCommand = saveCommand;
 
-        commands.add(helpCommand);
-        commands.add(infoCommand);
-        commands.add(historyCommand);
-        commands.add(showCommand);
-        commands.add(addCommand);
-        commands.add(removeCommand);
-        commands.add(updateCommand);
-        commands.add(sumOfMinimalPoint);
-        commands.add(averageOfMinimalPoint);
-        commands.add(clearCommand);
-        commands.add(exitCommand);
-        commands.add(executeScriptCommand);
-        commands.add(printFieldDescendingDisciplineCommand);
-        commands.add(removeGreaterCommand);
-        commands.add(removeLowerCommand);
-        commands.add(saveCommand);
+        commandsForHelpCommand.add(helpCommand);
+        commandsForHelpCommand.add(infoCommand);
+        commandsForHelpCommand.add(historyCommand);
+        commandsForHelpCommand.add(showCommand);
+        commandsForHelpCommand.add(addCommand);
+        commandsForHelpCommand.add(removeCommand);
+        commandsForHelpCommand.add(updateCommand);
+        commandsForHelpCommand.add(sumOfMinimalPoint);
+        commandsForHelpCommand.add(averageOfMinimalPoint);
+        commandsForHelpCommand.add(clearCommand);
+        commandsForHelpCommand.add(exitCommand);
+        commandsForHelpCommand.add(executeScriptCommand);
+        commandsForHelpCommand.add(printFieldDescendingDisciplineCommand);
+        commandsForHelpCommand.add(removeGreaterCommand);
+        commandsForHelpCommand.add(removeLowerCommand);
+        commandsForHelpCommand.add(saveCommand);
+
+
+        commands.put("help", helpCommand);
+        commands.put("info", infoCommand);
+        commands.put("history", historyCommand);
+        commands.put("show", showCommand);
+        commands.put("add", addCommand);
+        commands.put("remove_by_id", removeCommand);
+        commands.put("update", updateCommand);
+        commands.put("sum_of_minimal_point", sumOfMinimalPoint);
+        commands.put("average_of_minimal_point", averageOfMinimalPoint);
+        commands.put("clear", clearCommand);
+        commands.put("execute_script", executeScriptCommand);
+        commands.put("print_field_descending_discipline", printFieldDescendingDisciplineCommand);
+        commands.put("remove_greater", removeGreaterCommand);
+        commands.put("remove_lower", removeLowerCommand);
+        commands.put("save", saveCommand);
+        commands.put("exit", exitCommand);
     }
 
-    public List<Command> getCommands() {
-        return commands;
+    public void commandSelection(String[] command) {
+        Command commandSelect = commands.get(command[0]);
+        if (commandSelect != null) {
+            if (commandSelect.getName().equals("help")) if (help(command[1])) {
+                addCommandHistory(command[0]);
+            } else if (commandSelect.getName().equals("history")) if (history(command[1])) {
+                addCommandHistory(command[0]);
+            } else if (commandSelect.execute(command[1])) {
+                addCommandHistory(command[0]);
+            }
+        }
+        commandNotFound();
     }
 
     public boolean help(String arg) {
         if (helpCommand.execute(arg)) {
-            for (Command i : commands) {
+            for (Command i : commandsForHelpCommand) {
                 System.out.println("Команда " + i.getName() + " " + i.getDescription());
             }
             return true;
         }
         return false;
     }
-
-    public boolean info(String arg) {return infoCommand.execute(arg);}
 
     public boolean history(String arg) {
         if (historyCommand.execute(arg)) {
@@ -93,22 +122,8 @@ public class CommandManager {
         return false;
     }
 
-    public boolean show(String arg) {return showCommand.execute(arg);}
-    public boolean add(String arg) {return addCommand.execute(arg);}
-    public boolean removeById(String arg) {return removeCommand.execute(arg);}
-    public boolean updateById(String arg) {return updateCommand.execute(arg);}
-    public boolean sumOfMinimalPoint(String arg){return sumOfMinimalPoint.execute(arg);}
-    public boolean averageOfMinimalPoint(String arg){return averageOfMinimalPoint.execute(arg);}
-    public boolean clear(String arg){return clearCommand.execute(arg);}
-    public boolean exit(String arg) {return exitCommand.execute(arg);}
-    public boolean executeScript(String arg){return executeScriptCommand.execute(arg);}
-    public boolean printFieldDescendingDiscipline(String arg){return printFieldDescendingDiscipline.execute(arg);}
-    public boolean removeGreater(String arg){return removeGreater.execute(arg);}
-    public boolean removeLower(String arg){return removeLowerCommand.execute(arg);}
-    public boolean save(String arg){return saveCommand.execute(arg);}
-    public boolean commandNotFound() {
+    public void commandNotFound() {
         System.out.println("команда не найдена, введите команду help, чтобы получить инструкции");
-        return true;
     }
 
     public void addCommandHistory(String command) {

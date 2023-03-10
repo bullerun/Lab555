@@ -6,6 +6,7 @@ import me.lab5.Data.Discipline;
 import me.lab5.Data.LabWork;
 import me.lab5.Exception.ScriptRecursionException;
 import me.lab5.Manager.CollectionManager;
+import me.lab5.Manager.CommandManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -22,6 +23,10 @@ import java.util.*;
 public class FileHanding {
 
 
+    public void setCommandManager(CommandManager commandManager) {
+        this.commandManager = commandManager;
+    }
+
     public enum FileType {
         XML_FILE,
         SCRIPT
@@ -31,6 +36,7 @@ public class FileHanding {
     private Console console;
     private String path;
     private CollectionManager collectionManager;
+    private CommandManager commandManager;
     private LabAsk labAsk;
     private String envVariable;
     private List<String> nameScripts = new ArrayList<String>();
@@ -55,7 +61,7 @@ public class FileHanding {
             while (scriptScanner.hasNextLine()) {
                 command = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
                 command[1] = command[1].trim();
-                console.commandSelection(command);
+                commandManager.commandSelection(command);
             }
             labAsk.setScanner(tmpScanner);
         } catch (UnsupportedEncodingException e) {
