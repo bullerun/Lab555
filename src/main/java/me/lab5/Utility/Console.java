@@ -84,4 +84,6 @@ public class Console {
     public void setCommandManager(CommandManager commandManager){
         this.commandManager = commandManager;
     }
+
+
 }

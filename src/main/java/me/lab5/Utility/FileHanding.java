@@ -17,31 +17,23 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.*;
 import java.time.LocalDate;
-import java.util.NavigableSet;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.util.*;
 
 public class FileHanding {
 
-    public enum ExitCode {
-        ERROR,
-        EXIT,
-        NORMAL
-    }
 
     public enum FileType {
         XML_FILE,
         SCRIPT
     }
 
-    private ExitCode exitCode = ExitCode.NORMAL;
     private FileType fileType;
     private Console console;
     private String path;
-    private String[] command;
     private CollectionManager collectionManager;
     private LabAsk labAsk;
     private String envVariable;
+    private List<String> nameScripts = new ArrayList<String>();
 
     public FileHanding(CollectionManager collectionManager, Console console, LabAsk labAsk, String envVariable) {
         this.collectionManager = collectionManager;
@@ -52,36 +44,29 @@ public class FileHanding {
 
     public void scriptReader() throws IOException {
         try {
+            if (nameScripts.contains(path)) throw new ScriptRecursionException();
+            nameScripts.add(path);
             String[] command;
             FileInputStream fileInputStream = new FileInputStream(path);
             Scanner scriptScanner = new Scanner(new InputStreamReader(fileInputStream, "UTF-8"));
             if (!scriptScanner.hasNext()) throw new NoSuchElementException();
-            int commandStatus = 1;
             Scanner tmpScanner = labAsk.getScanner();
             labAsk.setScanner(scriptScanner);
-            do {
+            while (scriptScanner.hasNextLine()) {
                 command = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
                 command[1] = command[1].trim();
-                while (scriptScanner.hasNextLine() && command[0].isEmpty()) {
-                    command = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
-                    command[1] = command[1].trim();
-                }
-                if (command[0].equals("execute_script")) {
-                    for (String script : command) {
-                        if (command[1].equals(script)) throw new ScriptRecursionException();
-                    }
-                }
-                commandStatus = console.commandSelection(command);
+                console.commandSelection(command);
             }
-            while (scriptScanner.hasNextLine() && commandStatus != 2);
             labAsk.setScanner(tmpScanner);
         } catch (UnsupportedEncodingException e) {
             System.out.println("Проблема со скриптом");
+        } catch (NoSuchElementException e) {
+            System.out.println("Скрипт пуст");
         } catch (ScriptRecursionException e) {
-            System.out.println("Нельзя вызывать тот же скрипт, который выполняется");
+            System.out.println("Повторный вызов скрипта " + path);
         }
-
     }
+
 
     public void setPath(String path) {
         this.path = path;

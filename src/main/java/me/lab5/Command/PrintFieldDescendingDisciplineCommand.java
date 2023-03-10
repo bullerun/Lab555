@@ -21,8 +21,12 @@ public class PrintFieldDescendingDisciplineCommand extends AbstractCommand {
             if (!argument.isEmpty()) throw new MustBeEmptyException();
             NavigableSet<LabWork> labWork = collectionManager.getLabWork().descendingSet();
             if (labWork.isEmpty()) throw new MustBeNotEmptyException();
-            for (LabWork i: labWork) {
-                System.out.println(i.getDiscipline());
+            for (LabWork i : labWork) {
+                if (i.getDiscipline() == null) {
+                    System.out.println("У " + i.getId() + " " + i.getName() + " не указана дисциплина");
+                } else {
+                    System.out.println("У " + i.getId() + " " + i.getName() + " дисциплина " + i.getDiscipline());
+                }
             }
             return true;
         } catch (MustBeEmptyException e) {

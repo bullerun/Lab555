@@ -126,10 +126,24 @@ public class LabAsk {
     }
 
     public Discipline disciplineAsk() {
+        while (true) {
+            try {
+                System.out.println("Вы хотите добавить дисциплину, введите 'yes', если да, no' или 'enter', если нет?");
+                String line = scanner.nextLine().trim();
+                if (line.equals("") | line.equals("no")) {
+                    return null;
+                }
+                if (line.equals("yes")) {
+                    break;
+                }
+                throw new IllegalArgumentException();
+            } catch (IllegalArgumentException e) {
+                System.out.println("Неверный ввод");
+            }
+        }
         try {
             Discipline discipline;
             String nameDiscipline = nameDisciplineAsk();
-            if (nameDiscipline == null) return null;
             int practiceHours = practiceHoursDisciplineAsk();
             discipline = new Discipline(nameDiscipline, practiceHours);
             return discipline;
@@ -139,18 +153,20 @@ public class LabAsk {
     }
 
     public String nameDisciplineAsk() {
-        try {
-            String discipline;
-            System.out.println("Введите название дисциплины");
-            discipline = scanner.nextLine().trim();
-            if (discipline.equals("")) return null;
-            return discipline;
-        } catch (NoSuchElementException e) {
-            return null;
+        String discipline;
+        while (true) {
+            try {
+                System.out.println("Введите название дисциплины");
+                discipline = scanner.nextLine().trim();
+                if (discipline.equals("")) throw new IllegalArgumentException();;
+                return discipline;
+            } catch (IllegalArgumentException e) {
+                System.out.println("Неверный ввод");
+            }
         }
     }
 
-    public int practiceHoursDisciplineAsk() throws NullPointerException{
+    public int practiceHoursDisciplineAsk() throws NullPointerException {
         int practiceHours;
         while (true) {
             try {
@@ -171,10 +187,10 @@ public class LabAsk {
             try {
                 String answer;
                 System.out.println(ask);
-                System.out.println("Если да, введите 'yes', если нет, то введите 'no'");
+                System.out.println("Если да, введите 'yes', если нет, то введите 'no' или нажмите 'enter'");
                 answer = scanner.nextLine().trim().toLowerCase();
                 if (answer.equals("yes")) return true;
-                if (answer.equals("no")) return false;
+                if (answer.equals("") | answer.equals("no")) return false;
                 throw new IllegalArgumentException();
             } catch (IllegalArgumentException e) {
                 System.out.println("Неверный ввод, введите только 'yes', если хотите сделать изменения, или 'no', если не хотите");
