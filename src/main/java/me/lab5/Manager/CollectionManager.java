@@ -1,13 +1,16 @@
 package me.lab5.Manager;
 
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import me.lab5.Data.LabWork;
 
 import java.time.LocalDate;
 import java.util.Iterator;
 import java.util.NavigableSet;
 import java.util.TreeSet;
-
+@JacksonXmlRootElement(localName = "labWorks")
 public class CollectionManager {
+    @JacksonXmlElementWrapper(localName = "labWork", useWrapping = false)
         private NavigableSet<LabWork> labWorks = new TreeSet<>();
     private LocalDate creatingCollection;
 
@@ -63,5 +66,10 @@ public class CollectionManager {
 
     public LocalDate getCreatingCollection() {
         return creatingCollection;
+    }
+
+    @Override
+    public String toString() {
+        return "labWorks=" + labWorks;
     }
 }

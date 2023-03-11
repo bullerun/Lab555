@@ -9,8 +9,8 @@ import java.util.Map;
 
 public class CommandManager {
     private final int numberOfRecentCommands = 9;
-    private List<Command> commandsForHelpCommand = new ArrayList<>();
-    private String[] lastCommands = new String[numberOfRecentCommands];
+    private ArrayList<Command> commandsForHelpCommand = new ArrayList<>();
+    private ArrayList<String> lastCommands = new ArrayList<>();
     private final Command helpCommand;
     private final Command infoCommand;
     private final Command historyCommand;
@@ -29,15 +29,15 @@ public class CommandManager {
     private RemoveLowerCommand removeLowerCommand;
     private SaveCommand saveCommand;
 
-    public CommandManager(Command helpCommand, Command infoCommand, Command historyCommand,
+    public CommandManager(Command infoCommand,
                           Command showCommand, Command addCommand, Command removeCommand, Command updateCommand,
                           Command sumOfMinimalPoint, Command averageOfMinimalPoint, Command clearCommand, Command exitCommand,
                           Command executeScriptCommand,
                           PrintFieldDescendingDisciplineCommand printFieldDescendingDisciplineCommand,
                           RemoveGreaterCommand removeGreaterCommand, RemoveLowerCommand removeLowerCommand, SaveCommand saveCommand) {
-        this.helpCommand = helpCommand;
+
         this.infoCommand = infoCommand;
-        this.historyCommand = historyCommand;
+        this.historyCommand = new HistoryCommand(lastCommands);
         this.showCommand = showCommand;
         this.addCommand = addCommand;
         this.removeCommand = removeCommand;
@@ -52,7 +52,7 @@ public class CommandManager {
         this.removeLowerCommand = removeLowerCommand;
         this.saveCommand = saveCommand;
 
-        commandsForHelpCommand.add(helpCommand);
+
         commandsForHelpCommand.add(infoCommand);
         commandsForHelpCommand.add(historyCommand);
         commandsForHelpCommand.add(showCommand);
@@ -68,7 +68,8 @@ public class CommandManager {
         commandsForHelpCommand.add(removeGreaterCommand);
         commandsForHelpCommand.add(removeLowerCommand);
         commandsForHelpCommand.add(saveCommand);
-
+        this.helpCommand = new HelpCommand(commandsForHelpCommand);
+        commandsForHelpCommand.add(helpCommand);
 
         commands.put("help", helpCommand);
         commands.put("info", infoCommand);
@@ -86,20 +87,18 @@ public class CommandManager {
         commands.put("remove_lower", removeLowerCommand);
         commands.put("save", saveCommand);
         commands.put("exit", exitCommand);
+
     }
 
     public void commandSelection(String[] command) {
         Command commandSelect = commands.get(command[0]);
         if (commandSelect != null) {
-            if (commandSelect.getName().equals("help")) if (help(command[1])) {
-                addCommandHistory(command[0]);
-            } else if (commandSelect.getName().equals("history")) if (history(command[1])) {
-                addCommandHistory(command[0]);
-            } else if (commandSelect.execute(command[1])) {
+            if (commandSelect.execute(command[1])) {
                 addCommandHistory(command[0]);
             }
+        } else {
+            commandNotFound();
         }
-        commandNotFound();
     }
 
     public boolean help(String arg) {
@@ -114,8 +113,8 @@ public class CommandManager {
 
     public boolean history(String arg) {
         if (historyCommand.execute(arg)) {
-            for (int i = 0; i < numberOfRecentCommands; i++) {
-                if (lastCommands[i] != null) System.out.println(lastCommands[i]);
+            for (int i = 0; i < lastCommands.size(); i++) {
+                System.out.println(lastCommands.get(i));
             }
             return true;
         }
@@ -127,9 +126,9 @@ public class CommandManager {
     }
 
     public void addCommandHistory(String command) {
-        for (int i = numberOfRecentCommands - 1; i > 0; i--) {
-            lastCommands[i] = lastCommands[i - 1];
+        lastCommands.add(command);
+        if (lastCommands.size() > 9) {
+            lastCommands.remove(0);
         }
-        lastCommands[0] = command;
     }
 }

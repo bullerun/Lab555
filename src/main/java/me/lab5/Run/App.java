@@ -4,10 +4,12 @@ import me.lab5.Manager.*;
 import me.lab5.Utility.Console;
 import me.lab5.Utility.FileHanding;
 import me.lab5.Utility.LabAsk;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String envVariable = System.getenv("LAB");
         Scanner scanner = new Scanner(System.in);
         CollectionManager collectionManager = new CollectionManager();
@@ -17,9 +19,7 @@ public class App {
         RunMode runMode = new RunMode(console, fileHanding);
         labAsk.setRunMode(runMode);
         CommandManager commandManager = new CommandManager(
-                new HelpCommand(),
                 new InfoCommand(collectionManager),
-                new HistoryCommand(),
                 new ShowCommand(collectionManager),
                 new AddCommand(collectionManager, labAsk, runMode),
                 new RemoveByIdCommand(collectionManager),

@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f6daf0-e602-4d9e-abce-c83f9eed87e7" name="Changes" comment="1">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="92f6daf0-e602-4d9e-abce-c83f9eed87e7" name="Changes" comment="map">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LabWorks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/LabWorks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ExecuteScriptCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HistoryCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HistoryCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Data/LabWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Data/LabWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CollectionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CommandManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Run/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Run/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/Console.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Run/RunMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Run/RunMode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/FileHanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/FileHanding.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +41,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Nikita_git" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -87,6 +92,14 @@
       <option name="presentableId" value="Default" />
       <updated>1678455215694</updated>
     </task>
+    <task id="LOCAL-00001" summary="map">
+      <created>1678482248075</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678482248075</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,6 +127,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="map" />
+    <option name="LAST_COMMIT_MESSAGE" value="map" />
   </component>
 </project>

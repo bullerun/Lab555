@@ -3,6 +3,8 @@ package me.lab5.Command;
 import me.lab5.Run.*;
 import me.lab5.Utility.FileHanding;
 
+import java.io.IOException;
+
 public class ExecuteScriptCommand extends AbstractCommand {
     private FileHanding fileHanding;
     private RunMode runMode;
@@ -18,7 +20,11 @@ public class ExecuteScriptCommand extends AbstractCommand {
         fileHanding.setPath(argument.trim());
         fileHanding.setFileType(FileHanding.FileType.SCRIPT);
         runMode.setMode(RunModeEnum.FILE_MODE);
-        runMode.operatingModeSetting();
+        try {
+            runMode.operatingModeSetting();
+        } catch (IOException e) {
+            System.out.println("sd");
+        }
         return true;
     }
 }

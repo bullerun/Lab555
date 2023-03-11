@@ -22,7 +22,7 @@ public class RunMode {
     FileHanding.FileType fileType;
 
     //Method for setting the operating mode based on the working mode
-    public void operatingModeSetting() {
+    public void operatingModeSetting() throws IOException {
         try {
             if (workingMode.equals(RunModeEnum.CONSOLE_MODE)) {
                 console.consoleReader();
@@ -30,9 +30,8 @@ public class RunMode {
                 fileHanding.operatingTypeSetting();
                 setMode(RunModeEnum.CONSOLE_MODE);
             }
-        }catch (IOException e){
-            System.out.println("файл не найден");
-        }catch (ParserConfigurationException e){
+        }
+        catch (ParserConfigurationException e){
             System.out.println("проблемы с xml файлом");
         }catch (SAXException e){
             System.out.println("Ошибка с xml " + e.getException());
