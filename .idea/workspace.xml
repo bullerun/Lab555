@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f6daf0-e602-4d9e-abce-c83f9eed87e7" name="Changes" comment="map">
+    <list default="true" id="92f6daf0-e602-4d9e-abce-c83f9eed87e7" name="Changes" comment="1">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LabWorks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/LabWorks.xml" afterDir="false" />
@@ -41,7 +42,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Nikita_git" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -92,14 +93,6 @@
       <option name="presentableId" value="Default" />
       <updated>1678455215694</updated>
     </task>
-    <task id="LOCAL-00001" summary="map">
-      <created>1678482248075</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1678482248075</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,7 +120,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
-    <MESSAGE value="map" />
-    <option name="LAST_COMMIT_MESSAGE" value="map" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>
