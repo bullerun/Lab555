@@ -1,4 +1,2 @@
-# Project exclude paths
-/.gradle/
-/build/
-todo.md
+.gradle
+build

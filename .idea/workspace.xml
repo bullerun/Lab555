@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f6daf0-e602-4d9e-abce-c83f9eed87e7" name="Changes" comment="1">
+    <list default="true" id="92f6daf0-e602-4d9e-abce-c83f9eed87e7" name="Changes" comment="пытаюсь сделать парсер попытка 101">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LabWorks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/LabWorks.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ExecuteScriptCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HelpCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HistoryCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HistoryCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Data/LabWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Data/LabWork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CommandManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Run/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Run/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Run/RunMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Run/RunMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/FileHanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/FileHanding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/LabAsk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/LabAsk.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Nikita_git" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,12 +51,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/nikitosek/IdeaProjects/agsdhgsga"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nikitosek\IdeaProjects\Lab555\src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="me.lab5.Run.App" />
@@ -93,6 +92,14 @@
       <option name="presentableId" value="Default" />
       <updated>1678455215694</updated>
     </task>
+    <task id="LOCAL-00001" summary="пытаюсь сделать парсер попытка 101">
+      <created>1679421622110</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679421622110</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +127,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="пытаюсь сделать парсер попытка 101" />
+    <option name="LAST_COMMIT_MESSAGE" value="пытаюсь сделать парсер попытка 101" />
   </component>
 </project>

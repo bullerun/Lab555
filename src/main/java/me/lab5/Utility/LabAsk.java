@@ -113,7 +113,7 @@ public class LabAsk {
                 System.out.println("Выберите сложность - " + Difficulty.allDifficulty());
                 String line = scanner.nextLine().trim().toUpperCase();
                 if (line.equals("")) return null;
-                difficulty = Difficulty.valueOf(line.toUpperCase());
+                difficulty = Difficulty.valueOf(line);
                 break;
             } catch (IllegalArgumentException e) {
                 if (runMode.getMode().equals(RunModeEnum.FILE_MODE)) return difficulty;

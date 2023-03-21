@@ -39,7 +39,8 @@ public class App {
         fileHanding.setFileType(FileHanding.FileType.XML_FILE);
         runMode.setMode(RunModeEnum.FILE_MODE);//установка режима работы
         runMode.operatingModeSetting(); // нужно понять когда устанавливать
-
         console.consoleReader();
+
+
     }
 }
