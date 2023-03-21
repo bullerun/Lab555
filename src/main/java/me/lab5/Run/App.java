@@ -18,22 +18,7 @@ public class App {
         FileHanding fileHanding = new FileHanding(collectionManager, console, labAsk, envVariable);
         RunMode runMode = new RunMode(console, fileHanding);
         labAsk.setRunMode(runMode);
-        CommandManager commandManager = new CommandManager(
-                new InfoCommand(collectionManager),
-                new ShowCommand(collectionManager),
-                new AddCommand(collectionManager, labAsk, runMode),
-                new RemoveByIdCommand(collectionManager),
-                new UpdateByIdCommand(collectionManager, labAsk),
-                new SumOfMinimalPointCommand(collectionManager),
-                new AverageOfMinimalPointCommand(collectionManager),
-                new ClearCommand(collectionManager),
-                new ExitCommand(),
-                new ExecuteScriptCommand(fileHanding, runMode),
-                new PrintFieldDescendingDisciplineCommand(collectionManager),
-                new RemoveGreaterCommand(collectionManager),
-                new RemoveLowerCommand(collectionManager),
-                new SaveCommand(fileHanding, collectionManager)
-        );
+        CommandManager commandManager = new CommandManager(collectionManager, fileHanding, runMode, labAsk);
         console.setCommandManager(commandManager);
         fileHanding.setCommandManager(commandManager);
         fileHanding.setFileType(FileHanding.FileType.XML_FILE);

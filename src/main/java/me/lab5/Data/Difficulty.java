@@ -12,5 +12,4 @@ public enum Difficulty {
         }
         return allDifficulty.toString();
     }
-
 }

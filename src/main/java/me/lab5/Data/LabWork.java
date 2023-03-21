@@ -1,10 +1,12 @@
 package me.lab5.Data;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import me.lab5.Exception.MustBeNotEmptyException;
+import me.lab5.Exception.RangeException;
 
 import java.time.LocalDate;
 
 public class LabWork implements Comparable<LabWork> {
+    private final Long MINIMAL_POINT = 0L;
     private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
@@ -12,15 +14,11 @@ public class LabWork implements Comparable<LabWork> {
     private long minimalPoint; //Значение поля должно быть больше 0
     private Difficulty difficulty; //Поле может быть null
     private Discipline discipline; //Поле может быть null
-    public LabWork(Long id, String name, Coordinates coordinates, LocalDate creationDate, long minimalPoint,
-                   Difficulty difficulty, Discipline discipline) {
+
+    public LabWork(Long id) {
         this.id = id;
-        this.name = name;
-        this.coordinates = coordinates;
-        this.creationDate = creationDate;
-        this.minimalPoint = minimalPoint;
-        this.difficulty = difficulty;
-        this.discipline = discipline;
+        this.coordinates = new Coordinates();
+        this.discipline = new Discipline();
     }
 
     public long getId() {
@@ -51,7 +49,8 @@ public class LabWork implements Comparable<LabWork> {
         return discipline;
     }
 
-    public void setName(String name) {
+    public void setName(String name) throws MustBeNotEmptyException {
+        if (name.equals("")) throw new MustBeNotEmptyException();
         this.name = name;
     }
 
@@ -59,12 +58,16 @@ public class LabWork implements Comparable<LabWork> {
         this.coordinates = coordinates;
     }
 
-    public void setMinimalPoint(long minimalPoint) {
+    public void setMinimalPoint(long minimalPoint) throws RangeException {
+        if (minimalPoint <= MINIMAL_POINT) throw new RangeException();
         this.minimalPoint = minimalPoint;
     }
 
-    public void setDifficulty(Difficulty difficulty) {
-        this.difficulty = difficulty;
+    public void setDifficulty(String difficulty) throws IllegalArgumentException{
+        if (difficulty.equals("")) this.difficulty = null;
+        else {
+            this.difficulty = Difficulty.valueOf(difficulty);
+        }
     }
 
     public void setDiscipline(Discipline discipline) {

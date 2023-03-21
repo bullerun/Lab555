@@ -22,17 +22,18 @@ public class UpdateByIdCommand extends AbstractCommand {
             if (argument.isEmpty()) throw new MustBeNotEmptyException();
             long updateLabWorkId = Long.parseLong(argument.trim());
             LabWork updateLabWork = collectionManager.getElementById(updateLabWorkId);
-            if(updateLabWork == null) throw new NullPointerException();
-            if (labAsk.updateById("Хотите изменить имя?")) updateLabWork.setName(labAsk.nameAsk());
-            if (labAsk.updateById("Хотите изменить координаты?")) updateLabWork.setCoordinates(labAsk.coordinatesAsk());
-            if (labAsk.updateById("Хотите изменить минимальный балл?")) updateLabWork.setMinimalPoint(labAsk.minimalPointAsk());
-            if (labAsk.updateById("Хотите изменить сложность?")) updateLabWork.setDifficulty(labAsk.difficultyAsk());
-            if (labAsk.updateById("Хотите изменить дисциплину?")) updateLabWork.setDiscipline(labAsk.disciplineAsk());
+            if (updateLabWork == null) throw new NullPointerException();
+            labAsk.setLabWork(updateLabWork);
+            if (labAsk.updateById("Хотите изменить имя?")) labAsk.nameAsk();
+            if (labAsk.updateById("Хотите изменить координаты?")) labAsk.coordinatesAsk();
+            if (labAsk.updateById("Хотите изменить минимальный балл?")) labAsk.minimalPointAsk();
+            if (labAsk.updateById("Хотите изменить сложность?")) labAsk.difficultyAsk();
+            if (labAsk.updateById("Хотите изменить дисциплину?")) labAsk.disciplineAsk();
             return true;
-        } catch (MustBeNotEmptyException e){
+        } catch (MustBeNotEmptyException e) {
             System.out.println("Id не введен");
             return false;
-        } catch (NullPointerException e){
+        } catch (NullPointerException e) {
             System.out.println("Лабораторной работы с таким Id отсутствует");
             return false;
         } catch (IncorrectScript e) {

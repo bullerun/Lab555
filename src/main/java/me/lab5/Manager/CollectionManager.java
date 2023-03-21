@@ -8,10 +8,9 @@ import java.time.LocalDate;
 import java.util.Iterator;
 import java.util.NavigableSet;
 import java.util.TreeSet;
-@JacksonXmlRootElement(localName = "labWorks")
+
 public class CollectionManager {
-    @JacksonXmlElementWrapper(localName = "labWork", useWrapping = false)
-        private NavigableSet<LabWork> labWorks = new TreeSet<>();
+    private NavigableSet<LabWork> labWorks = new TreeSet<>();
     private LocalDate creatingCollection;
 
     public CollectionManager() {
@@ -31,7 +30,8 @@ public class CollectionManager {
     public NavigableSet<LabWork> getLabWork() {
         return labWorks;
     }
-    public void clearCollection(){
+
+    public void clearCollection() {
         this.labWorks = new TreeSet<>();
         System.out.println("Коллекция очищена");
     }
@@ -39,6 +39,7 @@ public class CollectionManager {
     public void removeLabWork(LabWork removeLabWork) {
         labWorks.remove(removeLabWork);
     }
+
     public void removeGreater(LabWork removeLabWork) {
         Iterator<LabWork> labs = labWorks.tailSet(removeLabWork).iterator();
         labs.next();
@@ -47,6 +48,7 @@ public class CollectionManager {
             labs.remove();
         }
     }
+
     public void removeLower(LabWork removeLabWork) {
         Iterator<LabWork> labs = labWorks.headSet(removeLabWork).iterator();
         while (labs.hasNext()) {
@@ -55,7 +57,7 @@ public class CollectionManager {
         }
     }
 
-    public LabWork getElementById(long id){
+    public LabWork getElementById(long id) {
         for (LabWork i : labWorks) {
             if (i.getId() == id) {
                 return i;

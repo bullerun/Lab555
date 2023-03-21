@@ -24,14 +24,15 @@ public class AddCommand extends AbstractCommand {
     @Override
     public boolean execute(String argument) {
         try {
-            collectionManager.addToCollection(new LabWork(
-                    collectionManager.generateNextId(),
-                    labAsk.nameAsk(),
-                    labAsk.coordinatesAsk(),
-                    LocalDate.now(),
-                    labAsk.minimalPointAsk(),
-                    labAsk.difficultyAsk(),
-                    labAsk.disciplineAsk()));
+//            new LabWork(
+//                    collectionManager.generateNextId(),
+//                    labAsk.nameAsk(),
+//                    labAsk.coordinatesAsk(),
+//                    LocalDate.now(),
+//                    labAsk.minimalPointAsk(),
+//                    labAsk.difficultyAsk(),
+//                    labAsk.disciplineAsk())
+            collectionManager.addToCollection(labAsk.addLabWork(collectionManager.generateNextId()));
             return true;
         }catch (IncorrectScript e){
             return false;
