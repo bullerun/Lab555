@@ -1,5 +1,4 @@
 package me.lab5.Utility;
-import me.lab5.Data.LabWork;
 import me.lab5.Exception.ScriptRecursionException;
 import me.lab5.Manager.CollectionManager;
 import me.lab5.Manager.CommandManager;
@@ -24,27 +23,26 @@ public class FileHanding {
     }
 
     private FileType fileType;
-    private Console console;
-    private String path;
+    private String scriptPath;
     private CollectionManager collectionManager;
     private CommandManager commandManager;
     private LabAsk labAsk;
     private String envVariable;
     private List<String> nameScripts = new ArrayList<>();
 
-    public FileHanding(CollectionManager collectionManager, Console console, LabAsk labAsk, String envVariable) {
+    public FileHanding(CollectionManager collectionManager, LabAsk labAsk, String envVariable) {
         this.collectionManager = collectionManager;
-        this.console = console;
+
         this.labAsk = labAsk;
         this.envVariable = envVariable;
     }
 
     public void scriptReader() throws IOException {
         try {
-            if (nameScripts.contains(path)) throw new ScriptRecursionException();
-            nameScripts.add(path);
+            if (nameScripts.contains(scriptPath)) throw new ScriptRecursionException();
+            nameScripts.add(scriptPath);
             String[] command;
-            FileInputStream fileInputStream = new FileInputStream(path);
+            FileInputStream fileInputStream = new FileInputStream(scriptPath);
             Scanner scriptScanner = new Scanner(new InputStreamReader(fileInputStream, "UTF-8"));
             if (!scriptScanner.hasNext()) throw new NoSuchElementException();
             Scanner tmpScanner = labAsk.getScanner();
@@ -56,19 +54,19 @@ public class FileHanding {
             }
             while (scriptScanner.hasNextLine());
             labAsk.setScanner(tmpScanner);
-            nameScripts = new ArrayList<>();
+            nameScripts.clear();
         } catch (UnsupportedEncodingException e) {
             System.out.println("Проблема со скриптом");
         } catch (NoSuchElementException e) {
             System.out.println("Скрипт пуст");
         } catch (ScriptRecursionException e) {
-            System.out.println("Повторный вызов скрипта " + path);
+            System.out.println("Повторный вызов скрипта " + scriptPath);
         }
     }
 
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setScriptPath(String scriptPath) {
+        this.scriptPath = scriptPath;
     }
 
     public void xmlFileReader() {
@@ -93,33 +91,6 @@ public class FileHanding {
 
     }
 
-    public void writeToXML(NavigableSet<LabWork> labWorks) throws IOException {
-        FileWriter fileWriter = new FileWriter(envVariable);
-        fileWriter.append("<LabWorks>\n");
-        for (LabWork lab : labWorks) {
-            fileWriter.append("\t<LabWork>\n");
-            fileWriter.append("\t\t<id>").append(String.valueOf(lab.getId())).append("</id>\n");
-            fileWriter.append("\t\t<name>").append(lab.getName()).append("</name>\n");
-            fileWriter.append("\t\t<coordinates>").append(lab.getCoordinates().toString()).append("</coordinates>\n");
-            fileWriter.append("\t\t<creationDate>").append(lab.getCreationDate().toString()).append("</creationDate>\n");
-            fileWriter.append("\t\t<minimalPoint>").append(String.valueOf(lab.getMinimalPoint())).append("</minimalPoint>\n");
-            if (lab.getDifficulty() == null) {
-                fileWriter.append("\t\t<difficulty>").append("</difficulty>\n");
-            } else {
-                fileWriter.append("\t\t<difficulty>").append(lab.getDifficulty().toString()).append("</difficulty>\n");
-            }
-            if (lab.getDiscipline() == null) {
-                fileWriter.append("\t\t<discipline>").append("</discipline>\n");
-            } else {
-                fileWriter.append("\t\t<discipline>").append(lab.getDiscipline().toString()).append("</discipline>\n");
-            }
-            fileWriter.append("\t</LabWork>\n");
-        }
-        fileWriter.append("</LabWorks>\n");
-        fileWriter.close();
-    }
-
-
     public void operatingTypeSetting() throws IOException, ParserConfigurationException, SAXException {
         if (fileType.equals(FileType.XML_FILE)) {
             xmlFileReader();
@@ -132,7 +103,6 @@ public class FileHanding {
         this.fileType = fileType;
     }
 
-    // return fileType
     public FileType get() {
         return fileType;
     }

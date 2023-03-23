@@ -19,7 +19,6 @@ public class RunMode {
     private RunModeEnum workingMode = RunModeEnum.NONE_MODE;
     private Console console;
     private FileHanding fileHanding;
-    FileHanding.FileType fileType;
 
     //Method for setting the operating mode based on the working mode
     public void operatingModeSetting() throws IOException {

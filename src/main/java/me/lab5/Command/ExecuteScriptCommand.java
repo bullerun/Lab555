@@ -7,24 +7,24 @@ import java.io.IOException;
 
 public class ExecuteScriptCommand extends AbstractCommand {
     private FileHanding fileHanding;
-    private RunMode runMode;
 
-    public ExecuteScriptCommand(FileHanding fileHanding, RunMode runMode) {
+    public ExecuteScriptCommand(FileHanding fileHanding) {
         super("execute_script file_name", "считывает и исполняет скрипт из указанного файла. В скрипте содержатся команды в таком же виде, в котором их вводит пользователь в интерактивном режиме.");
         this.fileHanding = fileHanding;
-        this.runMode = runMode;
+
     }
 
     @Override
     public boolean execute(String argument) {
-        fileHanding.setPath(argument.trim());
-        fileHanding.setFileType(FileHanding.FileType.SCRIPT);
-        runMode.setMode(RunModeEnum.FILE_MODE);
         try {
-            runMode.operatingModeSetting();
+            fileHanding.setScriptPath(argument.trim());
+            fileHanding.scriptReader();
+            return true;
         } catch (IOException e) {
-            System.out.println("sd");
+            System.out.println("Проблемы с файлом");
+        } catch (IllegalArgumentException e){
+            System.out.println("Введен неправильный аргумент");
         }
-        return true;
+        return false;
     }
 }

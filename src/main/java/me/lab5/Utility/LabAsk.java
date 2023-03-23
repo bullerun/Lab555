@@ -81,7 +81,6 @@ public class LabAsk {
             }
         }
     }
-
     public void YAsk(Coordinates coordinates) throws IncorrectScript {
         while (true) {
             try {
@@ -94,7 +93,6 @@ public class LabAsk {
             }
         }
     }
-
     public void minimalPointAsk() throws IncorrectScript {
         while (true) {
             try {
@@ -122,7 +120,6 @@ public class LabAsk {
             }
         }
     }
-
     public void disciplineAsk() {
         while (true) {
             try {
@@ -130,8 +127,11 @@ public class LabAsk {
                 String line = scanner.nextLine().trim();
                 if (line.equals("") | line.equals("no")) {
                     labWork.setDiscipline(null);
+                    break;
                 }
                 if (line.equals("yes")) {
+                    nameDisciplineAsk(labWork.getDiscipline());
+                    practiceHoursDisciplineAsk(labWork.getDiscipline());
                     break;
                 }
                 throw new IllegalArgumentException();
@@ -139,8 +139,6 @@ public class LabAsk {
                 System.out.println("Неверный ввод");
             }
         }
-        nameDisciplineAsk(labWork.getDiscipline());
-        practiceHoursDisciplineAsk(labWork.getDiscipline());
 
     }
 

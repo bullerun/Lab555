@@ -15,7 +15,7 @@ public class App {
         CollectionManager collectionManager = new CollectionManager();
         LabAsk labAsk = new LabAsk(scanner);
         Console console = new Console(scanner);
-        FileHanding fileHanding = new FileHanding(collectionManager, console, labAsk, envVariable);
+        FileHanding fileHanding = new FileHanding(collectionManager, labAsk, envVariable);
         RunMode runMode = new RunMode(console, fileHanding);
         labAsk.setRunMode(runMode);
         CommandManager commandManager = new CommandManager(collectionManager, fileHanding, runMode, labAsk);

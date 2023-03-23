@@ -17,6 +17,7 @@ public class LabWork implements Comparable<LabWork> {
 
     public LabWork(Long id) {
         this.id = id;
+        this.creationDate = LocalDate.now();
         this.coordinates = new Coordinates();
         this.discipline = new Discipline();
     }

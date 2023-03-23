@@ -10,22 +10,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CommandManager {
-    private ArrayList<Command> commandsForHelpCommand = new ArrayList<>();
-    private ArrayList<String> lastCommands = new ArrayList<>();
+    ArrayList<Command> commandsForHelpCommand = new ArrayList<>();
+    ArrayList<String> lastCommands = new ArrayList<>();
     Map<String, Command> commands = new HashMap<>();
 
     public CommandManager(CollectionManager collectionManager, FileHanding fileHanding, RunMode runMode, LabAsk labAsk) {
         commandsForHelpCommand.add(new InfoCommand(collectionManager));
         commandsForHelpCommand.add(new HistoryCommand(lastCommands));
         commandsForHelpCommand.add(new ShowCommand(collectionManager));
-        commandsForHelpCommand.add(new AddCommand(collectionManager, labAsk, runMode));
+        commandsForHelpCommand.add(new AddCommand(collectionManager, labAsk));
         commandsForHelpCommand.add(new RemoveByIdCommand(collectionManager));
         commandsForHelpCommand.add(new UpdateByIdCommand(collectionManager, labAsk));
         commandsForHelpCommand.add(new SumOfMinimalPointCommand(collectionManager));
         commandsForHelpCommand.add(new AverageOfMinimalPointCommand(collectionManager));
         commandsForHelpCommand.add(new ClearCommand(collectionManager));
         commandsForHelpCommand.add(new ExitCommand());
-        commandsForHelpCommand.add(new ExecuteScriptCommand(fileHanding, runMode));
+        commandsForHelpCommand.add(new ExecuteScriptCommand(fileHanding));
         commandsForHelpCommand.add(new PrintFieldDescendingDisciplineCommand(collectionManager));
         commandsForHelpCommand.add(new RemoveGreaterCommand(collectionManager));
         commandsForHelpCommand.add(new RemoveLowerCommand(collectionManager));
@@ -36,13 +36,13 @@ public class CommandManager {
         commands.put("info", new InfoCommand(collectionManager));
         commands.put("history", new HistoryCommand(lastCommands));
         commands.put("show", new ShowCommand(collectionManager));
-        commands.put("add", new AddCommand(collectionManager, labAsk, runMode));
+        commands.put("add", new AddCommand(collectionManager, labAsk));
         commands.put("remove_by_id", new RemoveByIdCommand(collectionManager));
         commands.put("update", new UpdateByIdCommand(collectionManager, labAsk));
         commands.put("sum_of_minimal_point", new SumOfMinimalPointCommand(collectionManager));
         commands.put("average_of_minimal_point", new AverageOfMinimalPointCommand(collectionManager));
         commands.put("clear", new ClearCommand(collectionManager));
-        commands.put("execute_script", new ExecuteScriptCommand(fileHanding, runMode));
+        commands.put("execute_script", new ExecuteScriptCommand(fileHanding));
         commands.put("print_field_descending_discipline", new PrintFieldDescendingDisciplineCommand(collectionManager));
         commands.put("remove_greater", new RemoveGreaterCommand(collectionManager));
         commands.put("remove_lower", new RemoveLowerCommand(collectionManager));
