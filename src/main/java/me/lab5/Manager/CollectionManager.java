@@ -1,7 +1,6 @@
 package me.lab5.Manager;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+
 import me.lab5.Data.LabWork;
 
 import java.time.LocalDate;

@@ -1,7 +1,5 @@
 package me.lab5.Utility;
 import me.lab5.Manager.CommandManager;
-
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Console {

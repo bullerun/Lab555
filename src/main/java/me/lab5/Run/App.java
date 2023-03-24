@@ -5,8 +5,6 @@ import me.lab5.Utility.Console;
 import me.lab5.Utility.FileHanding;
 import me.lab5.Utility.LabAsk;
 import me.lab5.Utility.RunMode;
-
-import java.io.IOException;
 import java.util.Scanner;
 
 public class App {

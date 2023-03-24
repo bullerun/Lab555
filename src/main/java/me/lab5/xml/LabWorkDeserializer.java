@@ -1,21 +1,17 @@
 package me.lab5.xml;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import me.lab5.Data.Coordinates;
 import me.lab5.Data.LabWork;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
 
 public class LabWorkDeserializer extends StdDeserializer<LabWork> {
     public LabWorkDeserializer() {
-        super((Class<?>) null);
+        this(null);
     }
 
     public LabWorkDeserializer(Class<?> vc) {

@@ -3,7 +3,6 @@ package me.lab5.Utility;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.exc.StreamWriteException;
-import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import me.lab5.Data.LabWork;
@@ -120,8 +119,9 @@ public class FileHanding {
 
     private void creatFile() {
         try {
-            new File(Paths.get(System.getProperty("user.dir"), "LabWork.xml").toString()).createNewFile();
-            System.out.println("Файл создан по адресу " + Paths.get(System.getProperty("user.dir"), "LabWork.xml").toString());
+            this.envVariable =Paths.get(System.getProperty("user.dir"), "LabWork.xml").toString();
+            new File(envVariable).createNewFile();
+            System.out.println("Файл создан по адресу " + envVariable);
         } catch (IOException e) {
             System.out.println("файл с таким путем создан");
         }
