@@ -1,9 +1,7 @@
 package me.lab5.Utility;
-
 import me.lab5.Manager.CommandManager;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Console {
@@ -16,12 +14,14 @@ public class Console {
     }
 
     public void consoleReader() {
+
         while (true) {
             command = (scanner.nextLine().trim() + " ").split(" ", 2);
-            if (!command[0].equals("")){
+            if (!command[0].equals("")) {
                 commandManager.commandSelection(command);
             }
         }
+
     }
 
     public void setCommandManager(CommandManager commandManager) {

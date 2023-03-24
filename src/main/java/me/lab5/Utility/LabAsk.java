@@ -2,36 +2,31 @@ package me.lab5.Utility;
 
 import me.lab5.Data.*;
 import me.lab5.Exception.*;
-import me.lab5.Run.RunMode;
-import me.lab5.Run.RunModeEnum;
 
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class LabAsk {
     private final Long MINIMAL_POINT = 0L;
     private final float MINIMAL_X_COORDINATES = -18;
     private Scanner scanner;
-    private RunMode runMode;
+
     private LabWork labWork;
+
 
     public LabAsk(Scanner scanner) {
         this.scanner = scanner;
-    }
-
-    public void setRunMode(RunMode runMode) {
-        this.runMode = runMode;
     }
 
     public void setScanner(Scanner scanner) {
         this.scanner = scanner;
     }
 
+
     public void setLabWork(LabWork labWork) {
         this.labWork = labWork;
     }
 
-    public LabWork addLabWork(long id) throws IncorrectScript {
+    public LabWork addLabWork(long id) {
         this.labWork = new LabWork(id);
         nameAsk();
         coordinatesAsk();
@@ -45,7 +40,7 @@ public class LabAsk {
         return scanner;
     }
 
-    public void nameAsk() throws IncorrectScript {
+    public void nameAsk() {
         while (true) {
             try {
                 System.out.println("Введите название лабораторной");
@@ -53,17 +48,16 @@ public class LabAsk {
                 break;
             } catch (MustBeNotEmptyException e) {
                 System.out.println("Название не должно быть пустым");
-                if (runMode.getMode().equals(RunModeEnum.FILE_MODE)) throw new IncorrectScript();
             }
         }
     }
 
-    public void coordinatesAsk() throws IncorrectScript {
+    public void coordinatesAsk() {
         XAsk(labWork.getCoordinates());
         YAsk(labWork.getCoordinates());
     }
 
-    public void XAsk(Coordinates coordinates) throws IncorrectScript {
+    public void XAsk(Coordinates coordinates) {
         while (true) {
             try {
                 System.out.println("Введите X координату она должна быть больше " + MINIMAL_X_COORDINATES);
@@ -71,17 +65,18 @@ public class LabAsk {
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("при вводе не должно быть ничего кроме цифр и '.'");
-                if (runMode.getMode().equals(RunModeEnum.FILE_MODE)) throw new IncorrectScript();
+
             } catch (RangeException e) {
                 System.out.println("X должен быть больше -18");
-                if (runMode.getMode().equals(RunModeEnum.FILE_MODE)) throw new IncorrectScript();
+
             } catch (IllegalArgumentException e) {
                 System.out.println("Слишком большое число");
-                if (runMode.getMode().equals(RunModeEnum.FILE_MODE)) throw new IncorrectScript();
+
             }
         }
     }
-    public void YAsk(Coordinates coordinates) throws IncorrectScript {
+
+    public void YAsk(Coordinates coordinates) {
         while (true) {
             try {
                 System.out.println("Введите Y координату");
@@ -89,11 +84,12 @@ public class LabAsk {
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("некорректно введено число, число должно содержать только цифры и должно быть меньше или равно " + Long.MAX_VALUE);
-                if (runMode.getMode().equals(RunModeEnum.FILE_MODE)) throw new IncorrectScript();
+
             }
         }
     }
-    public void minimalPointAsk() throws IncorrectScript {
+
+    public void minimalPointAsk() {
         while (true) {
             try {
                 System.out.println("Введите минимальный балл он должен быть больше " + MINIMAL_POINT);
@@ -101,15 +97,15 @@ public class LabAsk {
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("некорректно введено число, число должно содержать только цифры и должно быть меньше или равно " + Long.MAX_VALUE);
-                if (runMode.getMode().equals(RunModeEnum.FILE_MODE)) throw new IncorrectScript();
+
             } catch (RangeException e) {
                 System.out.println("минимальный балл должен быть больше 0");
-                if (runMode.getMode().equals(RunModeEnum.FILE_MODE)) throw new IncorrectScript();
+
             }
         }
     }
 
-    public void difficultyAsk() throws IncorrectScript {
+    public void difficultyAsk() {
         while (true) {
             try {
                 System.out.println("Выберите сложность - " + Difficulty.allDifficulty());
@@ -117,9 +113,11 @@ public class LabAsk {
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println("нет такой сложности, повторите ввод");
+
             }
         }
     }
+
     public void disciplineAsk() {
         while (true) {
             try {
@@ -137,6 +135,7 @@ public class LabAsk {
                 throw new IllegalArgumentException();
             } catch (IllegalArgumentException e) {
                 System.out.println("Неверный ввод");
+
             }
         }
 
@@ -150,6 +149,7 @@ public class LabAsk {
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println("Неверный ввод");
+
             }
         }
     }
@@ -162,11 +162,12 @@ public class LabAsk {
                 break;
             } catch (NumberFormatException e) {
                 System.out.println("некорректно введено число, число должно содержать только цифры и должно быть меньше или равно " + Integer.MAX_VALUE);
+
             }
         }
     }
 
-    public boolean updateById(String ask) throws IncorrectScript {
+    public boolean updateById(String ask) {
         while (true) {
             try {
                 String answer;
@@ -178,7 +179,6 @@ public class LabAsk {
                 throw new IllegalArgumentException();
             } catch (IllegalArgumentException e) {
                 System.out.println("Неверный ввод, введите только 'yes', если хотите сделать изменения, или 'no', если не хотите");
-                if (runMode.getMode().equals(RunModeEnum.FILE_MODE)) throw new IncorrectScript();
             }
         }
     }

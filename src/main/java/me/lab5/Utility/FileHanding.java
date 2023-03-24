@@ -1,13 +1,21 @@
 package me.lab5.Utility;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.exc.StreamWriteException;
+import com.fasterxml.jackson.databind.DatabindException;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import me.lab5.Data.LabWork;
 import me.lab5.Exception.ScriptRecursionException;
 import me.lab5.Manager.CollectionManager;
 import me.lab5.Manager.CommandManager;
-import org.xml.sax.SAXException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import me.lab5.xml.LabWorkDeserializer;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class FileHanding {
@@ -17,94 +25,133 @@ public class FileHanding {
         this.commandManager = commandManager;
     }
 
-    public enum FileType {
-        XML_FILE,
-        SCRIPT
-    }
-
-    private FileType fileType;
-    private String scriptPath;
+    private Console console;
     private CollectionManager collectionManager;
     private CommandManager commandManager;
     private LabAsk labAsk;
     private String envVariable;
+    private RunMode runMode;
     private List<String> nameScripts = new ArrayList<>();
+    private List<Scanner> nameScanners = new ArrayList<>();
+    private XmlMapper mapper;
 
-    public FileHanding(CollectionManager collectionManager, LabAsk labAsk, String envVariable) {
+    public FileHanding(CollectionManager collectionManager, LabAsk labAsk, String envVariable, RunMode runMode, Console console) {
         this.collectionManager = collectionManager;
-
         this.labAsk = labAsk;
         this.envVariable = envVariable;
+        this.runMode = runMode;
+        this.console = console;
+
+        this.mapper = new XmlMapper();
+        SimpleModule module = new SimpleModule();
+        module.addDeserializer(LabWork.class, new LabWorkDeserializer());
+        this.mapper.registerModule(module);
+        this.mapper.registerModule(new JavaTimeModule());
+        this.mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
     }
 
-    public void scriptReader() throws IOException {
+    public void scriptReader(String scriptPath) {
         try {
             if (nameScripts.contains(scriptPath)) throw new ScriptRecursionException();
             nameScripts.add(scriptPath);
+            nameScanners.add(labAsk.getScanner());
+            if (!nameScripts.isEmpty()) runMode.setRunMode(RunModeEnum.SCRIPT);
+        } catch (ScriptRecursionException e) {
+            System.out.println("Повторный вызов скрипта " + scriptPath);
+            labAsk.setScanner(nameScanners.get(0));
+            nameScanners.clear();
+            nameScripts.clear();
+            runMode.setRunMode(RunModeEnum.CONSOLE);
+            console.consoleReader();
+        }
+        try {
             String[] command;
-            FileInputStream fileInputStream = new FileInputStream(scriptPath);
-            Scanner scriptScanner = new Scanner(new InputStreamReader(fileInputStream, "UTF-8"));
+            FileInputStream fileInputStream = new FileInputStream(Paths.get(System.getProperty("user.dir"), scriptPath).toString());
+
+            Scanner scriptScanner = new Scanner(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
             if (!scriptScanner.hasNext()) throw new NoSuchElementException();
-            Scanner tmpScanner = labAsk.getScanner();
             labAsk.setScanner(scriptScanner);
-            do{
+            do {
                 command = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
                 command[1] = command[1].trim();
                 commandManager.commandSelection(command);
-            }
-            while (scriptScanner.hasNextLine());
-            labAsk.setScanner(tmpScanner);
-            nameScripts.clear();
-        } catch (UnsupportedEncodingException e) {
-            System.out.println("Проблема со скриптом");
+            } while (scriptScanner.hasNextLine());
         } catch (NoSuchElementException e) {
-            System.out.println("Скрипт пуст");
-        } catch (ScriptRecursionException e) {
-            System.out.println("Повторный вызов скрипта " + scriptPath);
+            System.out.println("Скрипт пуст или отработал некорректно " + scriptPath);
+        } catch (IOException e) {
+            System.out.println("Файл не найден");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Введен неправильный аргумент");
+        } finally {
+            if (nameScanners.size() > 0) {
+                labAsk.setScanner(nameScanners.get(nameScanners.size() - 1));
+                nameScanners.remove(nameScanners.size() - 1);
+            }
+            if (nameScripts.size() > 0) {
+                nameScripts.remove(nameScripts.size() - 1);
+            }
+            runMode.setRunMode(RunModeEnum.CONSOLE);
         }
-    }
 
-
-    public void setScriptPath(String scriptPath) {
-        this.scriptPath = scriptPath;
     }
 
     public void xmlFileReader() {
         try {
-            ObjectMapper objectMapper = new XmlMapper();
-            FileInputStream file = new FileInputStream("C:\\Users\\nikitosek\\IdeaProjects\\Lab555\\src\\LabWorks.xml");
-
-            System.out.println("");
-
-            InputStreamReader inputBytes = new InputStreamReader(file);
-            char[] chars = new char[1024];
-            inputBytes.read(chars, 0, chars.length);
-            String b = new String(chars);
-//            System.out.println(b);
-            CollectionManager labWork = objectMapper.readValue(b, CollectionManager.class);
-//            System.out.println("ffds");
-//            System.out.println(labWork.getElementById(1));
-//            System.out.println("fvygkbhlkj");
-        }catch (IOException e){
-            System.out.println("ошибка xml");
-        }
-
-    }
-
-    public void operatingTypeSetting() throws IOException, ParserConfigurationException, SAXException {
-        if (fileType.equals(FileType.XML_FILE)) {
-            xmlFileReader();
-        } else {
-            scriptReader();
+            InputStreamReader reader = new InputStreamReader(new FileInputStream(envVariable));
+            int b;
+            StringBuilder out = new StringBuilder();
+            while ((b = reader.read()) != -1) {
+                out.append(Character.toChars(b));
+            }
+            if (out.isEmpty()) throw new NoSuchElementException();
+            deserialize(String.valueOf(out));
+        } catch (FileNotFoundException e) {
+            System.out.println("Файл не найден");
+            creatFile();
+        } catch (NullPointerException e) {
+            System.out.println("Переменная окружения не задана");
+            creatFile();
+        } catch (NoSuchElementException e) {
+            System.out.println("файл пуст");
+        } catch (IOException e) {
+            System.out.println("Ошибка с файлом");
         }
     }
 
-    public void setFileType(FileType fileType) {
-        this.fileType = fileType;
+    private void creatFile() {
+        try {
+            new File(Paths.get(System.getProperty("user.dir"), "LabWork.xml").toString()).createNewFile();
+            System.out.println("Файл создан по адресу " + Paths.get(System.getProperty("user.dir"), "LabWork.xml").toString());
+        } catch (IOException e) {
+            System.out.println("файл с таким путем создан");
+        }
     }
 
-    public FileType get() {
-        return fileType;
+    public void xmlFileWrite(CollectionManager collectionManager) {
+        serialize(collectionManager);
     }
 
+    private void serialize(CollectionManager collectionManager) {
+        try {
+            FileWriter fileWriter = new FileWriter(envVariable);
+            mapper.writeValue(fileWriter, collectionManager.getLabWork());
+        } catch (SecurityException e) {
+            System.out.println("Не хватает прав доступа");
+        } catch (StreamWriteException e) {
+            System.out.println("исключение записи потока");
+        } catch (FileNotFoundException e) {
+            System.out.println("Файл не найден");
+        } catch (IOException e) {
+            System.out.println("Ошибка добавления в xml файл");
+        }
+    }
+
+    public void deserialize(String s) throws JsonProcessingException {
+        LabWork[] labWorks = this.mapper.readValue(s, LabWork[].class);
+        for (LabWork labWork : labWorks) {
+            if (labWork != null) {
+                collectionManager.addToCollection(labWork);
+            }
+        }
+    }
 }

@@ -36,8 +36,6 @@ public class UpdateByIdCommand extends AbstractCommand {
         } catch (NullPointerException e) {
             System.out.println("Лабораторной работы с таким Id отсутствует");
             return false;
-        } catch (IncorrectScript e) {
-            return false;
-        }
+        } 
     }
 }

@@ -1,5 +1,6 @@
 package me.lab5.Command;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import me.lab5.Exception.MustBeEmptyException;
 import me.lab5.Manager.CollectionManager;
 import me.lab5.Utility.FileHanding;
@@ -17,17 +18,14 @@ public class SaveCommand extends AbstractCommand {
     }
 
     @Override
-    public boolean execute(String argument) {
+    public boolean execute(String argument){
         try {
             if (!argument.isEmpty()) throw new MustBeEmptyException();
-            fileHanding.writeToXML(collectionManager.getLabWork());
+            fileHanding.xmlFileWrite(collectionManager);
             System.out.println("Коллекция сохранена");
             return true;
-        }catch (MustBeEmptyException e) {
+        } catch (MustBeEmptyException e) {
             System.out.println("Команда вводится без аргумента");
-            return false;
-        } catch (IOException e) {
-            System.out.println("Ошибка записи");
             return false;
         }
     }

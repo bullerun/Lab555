@@ -1,16 +1,14 @@
 package me.lab5.Data;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import me.lab5.Exception.RangeException;
 
 public class Coordinates {
     private final float MINIMAL_X_COORDINATES = -18;
+    @JsonProperty("X_coordinates")
     private float x; //Значение поля должно быть больше -18
+    @JsonProperty("Y_coordinates")
     private Long y; //Поле не может быть null
-
-//    public Coordinates(float x, Long y) {
-//        this.x = x;
-//        this.y = y;
-//    }
     public Coordinates(){
 
     }
@@ -22,6 +20,14 @@ public class Coordinates {
 
     public void setY(Long y) throws IllegalArgumentException{
         this.y = y;
+    }
+
+    public float getX() {
+        return x;
+    }
+
+    public Long getY() {
+        return y;
     }
 
     @Override

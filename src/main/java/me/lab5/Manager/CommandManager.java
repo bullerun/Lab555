@@ -1,10 +1,12 @@
 package me.lab5.Manager;
 
 import me.lab5.Command.*;
-import me.lab5.Run.RunMode;
+
+import me.lab5.Exception.IncorrectScript;
 import me.lab5.Utility.FileHanding;
 import me.lab5.Utility.LabAsk;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +16,7 @@ public class CommandManager {
     ArrayList<String> lastCommands = new ArrayList<>();
     Map<String, Command> commands = new HashMap<>();
 
-    public CommandManager(CollectionManager collectionManager, FileHanding fileHanding, RunMode runMode, LabAsk labAsk) {
+    public CommandManager(CollectionManager collectionManager, FileHanding fileHanding, LabAsk labAsk) {
         commandsForHelpCommand.add(new InfoCommand(collectionManager));
         commandsForHelpCommand.add(new HistoryCommand(lastCommands));
         commandsForHelpCommand.add(new ShowCommand(collectionManager));

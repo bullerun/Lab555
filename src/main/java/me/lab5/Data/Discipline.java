@@ -10,6 +10,15 @@ public class Discipline {
     public Discipline(){
 
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPracticeHours() {
+        return practiceHours;
+    }
+
     public void setName(String name){
         if (name.equals("")) throw new IllegalArgumentException();
         this.name = name;

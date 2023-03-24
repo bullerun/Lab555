@@ -1,0 +1,10 @@
+info
+execute_script C:\Users\nikitosek\IdeaProjects\Lab555\src\script2.txt
+add
+-1000
+-19
+-19
+
+help
+qwe
+info

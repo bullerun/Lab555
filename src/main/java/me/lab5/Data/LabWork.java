@@ -1,5 +1,7 @@
 package me.lab5.Data;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import me.lab5.Exception.MustBeNotEmptyException;
 import me.lab5.Exception.RangeException;
 
@@ -10,10 +12,19 @@ public class LabWork implements Comparable<LabWork> {
     private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
     private long minimalPoint; //Значение поля должно быть больше 0
     private Difficulty difficulty; //Поле может быть null
     private Discipline discipline; //Поле может быть null
+
+    public void setCreationDate(LocalDate creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public void setDifficulty(Difficulty difficulty) {
+        this.difficulty = difficulty;
+    }
 
     public LabWork(Long id) {
         this.id = id;
@@ -89,5 +100,9 @@ public class LabWork implements Comparable<LabWork> {
     @Override
     public int compareTo(LabWork other) {
         return id.compareTo(other.getId());
+    }
+
+    public void setCrationDate(LocalDate creationDate) {
+        this.creationDate = creationDate;
     }
 }

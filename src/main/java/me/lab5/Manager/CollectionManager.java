@@ -16,9 +16,11 @@ public class CollectionManager {
         creatingCollection = LocalDate.now();
     }
 
+    public CollectionManager(TreeSet<LabWork> labWorks, long currentId) {
+    }
+
     public void addToCollection(LabWork newLab) {
         labWorks.add(newLab);
-        System.out.println("Лабораторная успешно добавлена");
     }
 
     public long generateNextId() {
