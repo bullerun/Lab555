@@ -1,5 +1,9 @@
 package me.lab5.Utility;
-
+/**
+ * class for setting the operating mode
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class RunMode {
     RunModeEnum runMode;
     public RunMode(){

@@ -3,7 +3,12 @@ package me.lab5.Command;
 import me.lab5.Data.LabWork;
 import me.lab5.Exception.MustBeEmptyException;
 import me.lab5.Manager.CollectionManager;
-
+/**
+ * outputs the average value of the minimal Point field for all items in the collection
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class AverageOfMinimalPointCommand extends AbstractCommand {
     CollectionManager collectionManager;
 

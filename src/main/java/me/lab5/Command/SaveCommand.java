@@ -1,12 +1,15 @@
 package me.lab5.Command;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import me.lab5.Exception.MustBeEmptyException;
 import me.lab5.Manager.CollectionManager;
 import me.lab5.Utility.FileHanding;
 
-import java.io.IOException;
-
+/**
+ * command of saving laboratory work to a file
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class SaveCommand extends AbstractCommand {
     private FileHanding fileHanding;
     private CollectionManager collectionManager;
@@ -18,7 +21,7 @@ public class SaveCommand extends AbstractCommand {
     }
 
     @Override
-    public boolean execute(String argument){
+    public boolean execute(String argument) {
         try {
             if (!argument.isEmpty()) throw new MustBeEmptyException();
             fileHanding.xmlFileWrite(collectionManager);

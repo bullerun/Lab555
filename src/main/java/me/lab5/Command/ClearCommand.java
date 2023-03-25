@@ -3,7 +3,12 @@ package me.lab5.Command;
 import me.lab5.Exception.MustBeEmptyException;
 import me.lab5.Exception.MustBeNotEmptyException;
 import me.lab5.Manager.CollectionManager;
-
+/**
+ * collection cleanup command
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class ClearCommand extends AbstractCommand{
     CollectionManager collectionManager;
     public ClearCommand(CollectionManager collectionManager){

@@ -4,7 +4,11 @@ import java.time.LocalDate;
 import java.util.Iterator;
 import java.util.NavigableSet;
 import java.util.TreeSet;
-
+/**
+ * class of working with the TreeSet collection
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class CollectionManager {
     private NavigableSet<LabWork> labWorks = new TreeSet<>();
     private LocalDate creatingCollection;
@@ -41,14 +45,15 @@ public class CollectionManager {
         Iterator<LabWork> labs = labWorks.tailSet(removeLabWork).iterator();
         labs.next();
         while (labs.hasNext()) {
-            LabWork lab = labs.next();
+            labs.next();
             labs.remove();
         }
     }
     public void removeLower(LabWork removeLabWork) {
         Iterator<LabWork> labs = labWorks.headSet(removeLabWork).iterator();
+        labs.next();
         while (labs.hasNext()) {
-            LabWork lab = labs.next();
+            labs.next();
             labs.remove();
         }
     }

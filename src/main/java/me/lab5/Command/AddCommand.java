@@ -3,7 +3,12 @@ package me.lab5.Command;
 import me.lab5.Manager.CollectionManager;
 import me.lab5.Utility.LabAsk;
 
-
+/**
+ * add lab command
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class AddCommand extends AbstractCommand {
     private CollectionManager collectionManager;
     private LabAsk labAsk;

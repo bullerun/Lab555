@@ -4,6 +4,12 @@ import me.lab5.Data.LabWork;
 import me.lab5.Exception.MustBeNotEmptyException;
 import me.lab5.Manager.CollectionManager;
 
+/**
+ * command deleting all laboratory work less than the entered
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class RemoveLowerCommand extends AbstractCommand {
     CollectionManager collectionManager;
 

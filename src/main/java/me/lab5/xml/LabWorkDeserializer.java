@@ -8,7 +8,11 @@ import me.lab5.Data.LabWork;
 
 import java.io.IOException;
 import java.time.LocalDate;
-
+/**
+ * class for setting the operating mode
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class LabWorkDeserializer extends StdDeserializer<LabWork> {
     public LabWorkDeserializer() {
         this(null);

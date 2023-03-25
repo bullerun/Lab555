@@ -6,7 +6,12 @@ import me.lab5.Exception.MustBeNotEmptyException;
 import me.lab5.Manager.CollectionManager;
 
 import java.util.NavigableSet;
-
+/**
+ * command to output the values of the discipline field of all laboratory works in descending order
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class PrintFieldDescendingDisciplineCommand extends AbstractCommand {
     CollectionManager collectionManager;
 

@@ -1,16 +1,18 @@
 package me.lab5.Manager;
 
 import me.lab5.Command.*;
-
-import me.lab5.Exception.IncorrectScript;
 import me.lab5.Utility.FileHanding;
 import me.lab5.Utility.LabAsk;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * class for interacting with commands
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class CommandManager {
     ArrayList<Command> commandsForHelpCommand = new ArrayList<>();
     ArrayList<String> lastCommands = new ArrayList<>();

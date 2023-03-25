@@ -4,14 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f6daf0-e602-4d9e-abce-c83f9eed87e7" name="Changes" comment="оно работает">
+    <list default="true" id="92f6daf0-e602-4d9e-abce-c83f9eed87e7" name="Changes" comment="Исправлен баг с update id">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jar/lab5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/lab5.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/script.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/AddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/AverageOfMinimalPointCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/AverageOfMinimalPointCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ClearCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ExecuteScriptCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ExitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HistoryCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HistoryCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/InfoCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/PrintFieldDescendingDisciplineCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/PrintFieldDescendingDisciplineCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/RemoveByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/RemoveByIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/RemoveGreaterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/RemoveGreaterCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/RemoveLowerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/RemoveLowerCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/SaveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ShowCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/SumOfMinimalPointCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/SumOfMinimalPointCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/UpdateByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/UpdateByIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Data/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Data/Coordinates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Data/Discipline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Data/Discipline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Data/LabWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Data/LabWork.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CollectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/Console.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/FileHanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/FileHanding.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/LabAsk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/LabAsk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/RunMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/RunMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/xml/LabWorkDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/xml/LabWorkDeserializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +128,7 @@
       <recent name="C:\Users\nikitosek\IdeaProjects\Lab555\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="Gradle.Lab555 [build]">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="me.lab5.Run.App" />
       <module name="Lab5.main" />
@@ -156,7 +178,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678455215694</updated>
-      <workItem from="1679679031515" duration="17973000" />
+      <workItem from="1679679031515" duration="24572000" />
     </task>
     <task id="LOCAL-00001" summary="пытаюсь сделать парсер попытка 101">
       <created>1679421622110</created>
@@ -207,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679689961968</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Исправлен баг с update id">
+      <created>1679705389616</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679705389616</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,14 +299,15 @@
     <MESSAGE value="Сохранение перед изменением парсера" />
     <MESSAGE value="Сделал парсер" />
     <MESSAGE value="оно работает" />
-    <option name="LAST_COMMIT_MESSAGE" value="оно работает" />
+    <MESSAGE value="Исправлен баг с update id" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправлен баг с update id" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/me/lab5/Utility/LabAsk.java</url>
-          <line>123</line>
+          <line>127</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>

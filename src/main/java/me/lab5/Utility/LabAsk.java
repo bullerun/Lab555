@@ -4,7 +4,11 @@ import me.lab5.Data.*;
 import me.lab5.Exception.*;
 
 import java.util.Scanner;
-
+/**
+ * auxiliary class for working with an instance of the LabWork class
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class LabAsk {
     private final Long MINIMAL_POINT = 0L;
     private final float MINIMAL_X_COORDINATES = -18;

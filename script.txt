@@ -20,5 +20,5 @@ name
 
 
 show
-remove_lower 3
+remove_greater 2
 show

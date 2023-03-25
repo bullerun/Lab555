@@ -1,13 +1,16 @@
 package me.lab5.Command;
 
 import me.lab5.Data.LabWork;
-import me.lab5.Exception.IncorrectScript;
 import me.lab5.Exception.MustBeNotEmptyException;
 import me.lab5.Manager.CollectionManager;
 import me.lab5.Utility.LabAsk;
 
-import java.util.Scanner;
-
+/**
+ * class update by id command
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class UpdateByIdCommand extends AbstractCommand {
     CollectionManager collectionManager;
     LabAsk labAsk;

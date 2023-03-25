@@ -3,7 +3,12 @@ package me.lab5.Command;
 import me.lab5.Data.LabWork;
 import me.lab5.Exception.MustBeEmptyException;
 import me.lab5.Manager.CollectionManager;
-
+/**
+ * command class lab output command
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class ShowCommand extends AbstractCommand{
     CollectionManager collectionManager;
 

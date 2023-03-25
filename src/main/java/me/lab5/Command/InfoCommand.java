@@ -2,7 +2,12 @@ package me.lab5.Command;
 
 import me.lab5.Exception.MustBeEmptyException;
 import me.lab5.Manager.CollectionManager;
-
+/**
+ * command outputs information about the collection
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class InfoCommand extends AbstractCommand {
     private CollectionManager collectionManager;
 

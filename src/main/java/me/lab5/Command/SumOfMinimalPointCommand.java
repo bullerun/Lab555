@@ -4,6 +4,12 @@ import me.lab5.Data.LabWork;
 import me.lab5.Exception.MustBeEmptyException;
 import me.lab5.Manager.CollectionManager;
 
+/**
+ * class sum of minimal point command
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class SumOfMinimalPointCommand extends AbstractCommand {
     CollectionManager collectionManager;
 

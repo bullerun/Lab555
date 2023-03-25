@@ -1,5 +1,11 @@
 package me.lab5.Data;
 
+/**
+ * an auxiliary class for working with LabWork discipline
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class Discipline {
     private String name; //Поле не может быть null, Строка не может быть пустой
     private int practiceHours;

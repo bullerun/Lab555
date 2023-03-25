@@ -6,6 +6,12 @@ import me.lab5.Exception.RangeException;
 
 import java.time.LocalDate;
 
+/**
+ * class of creating a laboratory work
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class LabWork implements Comparable<LabWork> {
     private final Long MINIMAL_POINT = 0L;
     private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически

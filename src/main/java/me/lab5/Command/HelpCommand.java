@@ -4,7 +4,12 @@ import me.lab5.Exception.MustBeEmptyException;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * command outputs help on
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class HelpCommand extends AbstractCommand {
     private ArrayList<Command> commandsForHelpCommand;
 

@@ -4,6 +4,12 @@ import me.lab5.Data.LabWork;
 import me.lab5.Exception.MustBeNotEmptyException;
 import me.lab5.Manager.CollectionManager;
 
+/**
+ * command that deletes all laboratory works is greater than the entered
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class RemoveGreaterCommand extends AbstractCommand {
     CollectionManager collectionManager;
 

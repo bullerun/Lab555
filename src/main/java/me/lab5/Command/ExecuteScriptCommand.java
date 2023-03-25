@@ -1,11 +1,13 @@
 package me.lab5.Command;
 
-import me.lab5.Exception.IncorrectScript;
-import me.lab5.Run.*;
 import me.lab5.Utility.FileHanding;
 
-import java.io.IOException;
-
+/**
+ * command the command reading and executing the script
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class ExecuteScriptCommand extends AbstractCommand {
     private FileHanding fileHanding;
 

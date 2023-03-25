@@ -3,7 +3,12 @@ package me.lab5.Command;
 import me.lab5.Exception.MustBeEmptyException;
 
 import java.util.ArrayList;
-
+/**
+ * command outputs the last 9 entered commands
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class HistoryCommand extends AbstractCommand {
     private ArrayList<String> lastCommands;
     public HistoryCommand(ArrayList<String> lastCommands) {

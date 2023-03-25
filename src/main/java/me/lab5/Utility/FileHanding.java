@@ -17,6 +17,11 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.util.*;
 
+/**
+ * class for interacting with files
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public class FileHanding {
 
 
@@ -40,7 +45,6 @@ public class FileHanding {
         this.envVariable = envVariable;
         this.runMode = runMode;
         this.console = console;
-
         this.mapper = new XmlMapper();
         SimpleModule module = new SimpleModule();
         module.addDeserializer(LabWork.class, new LabWorkDeserializer());
@@ -63,11 +67,8 @@ public class FileHanding {
             runMode.setRunMode(RunModeEnum.CONSOLE);
             console.consoleReader();
         }
-        try {
-            String[] command;
-            FileInputStream fileInputStream = new FileInputStream(Paths.get(System.getProperty("user.dir"), scriptPath).toString());
-
-            Scanner scriptScanner = new Scanner(new InputStreamReader(fileInputStream, StandardCharsets.UTF_8));
+        String[] command;
+        try (Scanner scriptScanner = new Scanner(new InputStreamReader(new FileInputStream(Paths.get(System.getProperty("user.dir"), scriptPath).toString()), StandardCharsets.UTF_8))) {
             if (!scriptScanner.hasNext()) throw new NoSuchElementException();
             labAsk.setScanner(scriptScanner);
             do {
@@ -95,8 +96,7 @@ public class FileHanding {
     }
 
     public void xmlFileReader() {
-        try {
-            InputStreamReader reader = new InputStreamReader(new FileInputStream(envVariable));
+        try (InputStreamReader reader = new InputStreamReader(new FileInputStream(envVariable))) {
             int b;
             StringBuilder out = new StringBuilder();
             while ((b = reader.read()) != -1) {
@@ -119,7 +119,7 @@ public class FileHanding {
 
     private void creatFile() {
         try {
-            this.envVariable =Paths.get(System.getProperty("user.dir"), "LabWork.xml").toString();
+            this.envVariable = Paths.get(System.getProperty("user.dir"), "LabWork.xml").toString();
             new File(envVariable).createNewFile();
             System.out.println("Файл создан по адресу " + envVariable);
         } catch (IOException e) {
@@ -132,8 +132,7 @@ public class FileHanding {
     }
 
     private void serialize(CollectionManager collectionManager) {
-        try {
-            FileWriter fileWriter = new FileWriter(envVariable);
+        try (FileWriter fileWriter = new FileWriter(envVariable);) {
             mapper.writeValue(fileWriter, collectionManager.getLabWork());
         } catch (SecurityException e) {
             System.out.println("Не хватает прав доступа");
