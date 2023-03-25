@@ -128,6 +128,9 @@ public class LabAsk {
                     break;
                 }
                 if (line.equals("yes")) {
+                    if (labWork.getDiscipline() == null) {
+                        labWork.setDiscipline(new Discipline());
+                    }
                     nameDisciplineAsk(labWork.getDiscipline());
                     practiceHoursDisciplineAsk(labWork.getDiscipline());
                     break;

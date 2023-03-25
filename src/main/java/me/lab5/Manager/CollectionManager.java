@@ -1,12 +1,10 @@
 package me.lab5.Manager;
-
-
 import me.lab5.Data.LabWork;
-
 import java.time.LocalDate;
 import java.util.Iterator;
 import java.util.NavigableSet;
 import java.util.TreeSet;
+
 public class CollectionManager {
     private NavigableSet<LabWork> labWorks = new TreeSet<>();
     private LocalDate creatingCollection;
@@ -30,8 +28,9 @@ public class CollectionManager {
     public NavigableSet<LabWork> getLabWork() {
         return labWorks;
     }
-    public void clearCollection(){
-        this.labWorks = new TreeSet<>();
+
+    public void clearCollection() {
+        this.labWorks.clear();
         System.out.println("Коллекция очищена");
     }
 
@@ -54,7 +53,8 @@ public class CollectionManager {
         }
     }
 
-    public LabWork getElementById(long id){
+
+    public LabWork getElementById(long id) {
         for (LabWork i : labWorks) {
             if (i.getId() == id) {
                 return i;

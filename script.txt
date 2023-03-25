@@ -1,6 +1,3 @@
-info
-execute_script C:\Users\nikitosek\IdeaProjects\Lab555\src\script1.txt
-show
 add
 name
 1
@@ -8,6 +5,20 @@ name
 4
 
 
-help
-qwe
-info
+add
+name
+1
+2
+4
+
+
+add
+name
+1
+2
+4
+
+
+show
+remove_lower 3
+show

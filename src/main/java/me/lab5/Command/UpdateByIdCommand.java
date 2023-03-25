@@ -6,6 +6,8 @@ import me.lab5.Exception.MustBeNotEmptyException;
 import me.lab5.Manager.CollectionManager;
 import me.lab5.Utility.LabAsk;
 
+import java.util.Scanner;
+
 public class UpdateByIdCommand extends AbstractCommand {
     CollectionManager collectionManager;
     LabAsk labAsk;
@@ -36,6 +38,9 @@ public class UpdateByIdCommand extends AbstractCommand {
         } catch (NullPointerException e) {
             System.out.println("Лабораторной работы с таким Id отсутствует");
             return false;
-        } 
+        } catch (NumberFormatException e) {
+            System.out.println("некорректно введено число, число должно содержать только цифры и должно быть меньше или равно " + Long.MAX_VALUE);
+            return false;
+        }
     }
 }

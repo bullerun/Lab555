@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f6daf0-e602-4d9e-abce-c83f9eed87e7" name="Changes" comment="Сделал парсер">
+    <list default="true" id="92f6daf0-e602-4d9e-abce-c83f9eed87e7" name="Changes" comment="оно работает">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/AbstractCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/AbstractCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Data/LabWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Data/LabWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jar/lab5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/lab5.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/script.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/RemoveByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/RemoveByIdCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/UpdateByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/UpdateByIdCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Run/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Run/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/FileHanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/FileHanding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/xml/LabWorkDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/xml/LabWorkDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/LabAsk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/LabAsk.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +106,7 @@
       <recent name="C:\Users\nikitosek\IdeaProjects\Lab555\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Lab555 [build]">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="me.lab5.Run.App" />
       <module name="Lab5.main" />
@@ -158,7 +156,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678455215694</updated>
-      <workItem from="1679679031515" duration="8104000" />
+      <workItem from="1679679031515" duration="17973000" />
     </task>
     <task id="LOCAL-00001" summary="пытаюсь сделать парсер попытка 101">
       <created>1679421622110</created>
@@ -195,7 +193,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679682019319</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="оно работает">
+      <created>1679689949690</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679689949690</updated>
+    </task>
+    <task id="LOCAL-00007" summary="оно работает">
+      <created>1679689961968</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679689961968</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +216,28 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="3b08d935-e341-4faf-9aa1-0f14d7206c1c">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/Nikita" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -212,7 +246,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Nikita_git" />
+                        <option value="origin/Nikita" />
                       </list>
                     </value>
                   </entry>
@@ -223,6 +257,11 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="3b08d935-e341-4faf-9aa1-0f14d7206c1c" value="TOOL_WINDOW" />
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
@@ -230,6 +269,18 @@
     <MESSAGE value="Переделал считывание данных&#10;LabAsk теперь не проверяет на корректность вода, а просто выводит ошибки &#10;Проверка ввода проводиться в set-торах" />
     <MESSAGE value="Сохранение перед изменением парсера" />
     <MESSAGE value="Сделал парсер" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал парсер" />
+    <MESSAGE value="оно работает" />
+    <option name="LAST_COMMIT_MESSAGE" value="оно работает" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/me/lab5/Utility/LabAsk.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
