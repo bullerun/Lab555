@@ -1,9 +1,11 @@
 package me.lab5.Command;
 
-import me.lab5.Exception.IncorrectScript;
-
-import java.io.IOException;
-
+/**
+ * interface from which all commands are implemented
+ *
+ * @author Nikita and Vlad
+ * @version 0.1
+ */
 public interface Command {
     String getDescription();
     String getName();

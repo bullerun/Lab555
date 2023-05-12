@@ -1,24 +1,13 @@
-add
-name
-1
-2
-4
-
-
-add
-name
-1
-2
-4
-
-
-add
-name
-1
-2
-4
-
-
 show
-remove_greater 2
-show
+add
+123
+123
+123
+123123
+123
+123
+
+
+
+
+execute_script script1.txt

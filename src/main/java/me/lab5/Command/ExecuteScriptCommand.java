@@ -3,7 +3,7 @@ package me.lab5.Command;
 import me.lab5.Utility.FileHanding;
 
 /**
- * command the command reading and executing the script
+ * command reading and executing the script
  *
  * @author Nikita and Vlad
  * @version 0.1

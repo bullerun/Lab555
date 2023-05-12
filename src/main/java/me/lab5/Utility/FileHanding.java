@@ -92,7 +92,6 @@ public class FileHanding {
             }
             runMode.setRunMode(RunModeEnum.CONSOLE);
         }
-
     }
 
     public void xmlFileReader() {
@@ -134,6 +133,7 @@ public class FileHanding {
     private void serialize(CollectionManager collectionManager) {
         try (FileWriter fileWriter = new FileWriter(envVariable);) {
             mapper.writeValue(fileWriter, collectionManager.getLabWork());
+
         } catch (SecurityException e) {
             System.out.println("Не хватает прав доступа");
         } catch (StreamWriteException e) {
@@ -154,3 +154,4 @@ public class FileHanding {
         }
     }
 }
+

@@ -4,35 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92f6daf0-e602-4d9e-abce-c83f9eed87e7" name="Changes" comment="Исправлен баг с update id">
+    <list default="true" id="92f6daf0-e602-4d9e-abce-c83f9eed87e7" name="Changes" comment="Сделал javadoc">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jar/lab5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/jar/lab5.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/script.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/AddCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/AverageOfMinimalPointCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/AverageOfMinimalPointCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ClearCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/script1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/script2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/AbstractCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/AbstractCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ExecuteScriptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ExecuteScriptCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ExitCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HelpCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HistoryCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/HistoryCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/InfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/InfoCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/PrintFieldDescendingDisciplineCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/PrintFieldDescendingDisciplineCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/RemoveByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/RemoveByIdCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/RemoveGreaterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/RemoveGreaterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/RemoveLowerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/RemoveLowerCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/SaveCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ShowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/ShowCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/SumOfMinimalPointCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/SumOfMinimalPointCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Command/UpdateByIdCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Command/UpdateByIdCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Data/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Data/Coordinates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Data/Discipline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Data/Discipline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Data/LabWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Data/LabWork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CollectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CollectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Manager/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Run/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Run/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/Console.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/FileHanding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/FileHanding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/LabAsk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/LabAsk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/RunMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/Utility/RunMode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/lab5/xml/LabWorkDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/lab5/xml/LabWorkDeserializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,6 +80,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="793bb760-564b-4a4d-aefb-b88030258686" />
+        <option name="url" value="https://github.com/bullerun/Lab555.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -106,19 +103,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/nikitosek/IdeaProjects/untitled5",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Nikita&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nikitosek/IdeaProjects/Lab555&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="me.lab5.xml" />
@@ -128,9 +131,22 @@
       <recent name="C:\Users\nikitosek\IdeaProjects\Lab555\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Lab555 [build]">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="me.lab5.Run.App" />
+      <module name="Lab5.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.lab5.Run.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.lab5.Run.Test" />
       <module name="Lab5.main" />
       <extension name="coverage">
         <pattern>
@@ -161,10 +177,12 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="Gradle.Lab555 [build]" />
         <item itemvalue="Application.App" />
       </list>
@@ -178,7 +196,32 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678455215694</updated>
-      <workItem from="1679679031515" duration="24572000" />
+      <workItem from="1679679031515" duration="26288000" />
+      <workItem from="1679729100147" duration="6138000" />
+      <workItem from="1680859516667" duration="130000" />
+      <workItem from="1680871036978" duration="2230000" />
+      <workItem from="1680890464067" duration="22000" />
+      <workItem from="1680890503306" duration="10471000" />
+      <workItem from="1682114869987" duration="2024000" />
+      <workItem from="1682248517933" duration="335000" />
+      <workItem from="1682248971462" duration="155000" />
+      <workItem from="1682249140539" duration="133000" />
+      <workItem from="1682249357849" duration="166000" />
+      <workItem from="1682249535083" duration="50000" />
+      <workItem from="1682250194890" duration="261000" />
+      <workItem from="1682251039499" duration="450000" />
+      <workItem from="1682251501558" duration="301000" />
+      <workItem from="1682251843084" duration="124000" />
+      <workItem from="1682254246142" duration="2329000" />
+      <workItem from="1682349235256" duration="53000" />
+      <workItem from="1682888399048" duration="609000" />
+      <workItem from="1682900389370" duration="1625000" />
+      <workItem from="1682955989559" duration="29522000" />
+      <workItem from="1683294646422" duration="1048000" />
+      <workItem from="1683312694205" duration="44000" />
+      <workItem from="1683346434637" duration="408000" />
+      <workItem from="1683349769022" duration="61000" />
+      <workItem from="1683891100042" duration="121000" />
     </task>
     <task id="LOCAL-00001" summary="пытаюсь сделать парсер попытка 101">
       <created>1679421622110</created>
@@ -236,13 +279,36 @@
       <option name="project" value="LOCAL" />
       <updated>1679705389616</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Сделал javadoc">
+      <created>1679716542337</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679716542337</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="3b08d935-e341-4faf-9aa1-0f14d7206c1c" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="3b08d935-e341-4faf-9aa1-0f14d7206c1c">
@@ -286,11 +352,6 @@
         </entry>
       </map>
     </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="3b08d935-e341-4faf-9aa1-0f14d7206c1c" value="TOOL_WINDOW" />
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
@@ -300,15 +361,16 @@
     <MESSAGE value="Сделал парсер" />
     <MESSAGE value="оно работает" />
     <MESSAGE value="Исправлен баг с update id" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправлен баг с update id" />
+    <MESSAGE value="Сделал javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал javadoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/me/lab5/Utility/LabAsk.java</url>
-          <line>127</line>
-          <option name="timeStamp" value="21" />
+          <url>file://$PROJECT_DIR$/src/main/java/me/lab5/Utility/FileHanding.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
