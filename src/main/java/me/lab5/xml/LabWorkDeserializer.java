@@ -35,7 +35,7 @@ public class LabWorkDeserializer extends StdDeserializer<LabWork> {
             labWork.setCrationDate(LocalDate.parse(node.get("creationDate").textValue().trim()));
             labWork.setMinimalPoint(Long.parseLong(node.get("minimalPoint").textValue().trim()));
             if (node.has("difficulty")) labWork.setDifficulty(node.get("difficulty").textValue().trim());
-            if (node.has("difficulty")) {
+            if (node.has("discipline")) {
                 labWork.getDiscipline().setName(node.get("discipline").get("name").textValue().trim());
                 labWork.getDiscipline().setPracticeHours(Integer.parseInt(node.get("discipline").get("practice_hours").textValue().trim()));
             } else {
